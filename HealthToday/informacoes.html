@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HealthToday | Instrumental </title>
+    <link rel="icon" href="icon/iconHealthToday.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/cssInformacoes.css">
+</head>
+
+<body>
+    <nav class="menu">
+        <a href="home.html">
+            <img class="logo-icon" src="icon/logo.png" alt="Logo">
+        </a>
+        <div id="menu-trigger">
+            <img class="user-icon" src="icon/user.png" alt="User Icon">
+            <span class="down-arrow">&#x25BC;</span>
+        </div>
+    </nav>
+
+    <div class="welcome-message" id="welcome-message"></div>
+
+    <div id="mySidenav" class="sidenav">
+        <div id="user-icon-wrapper">
+            <img id="user-icon-menu" src="icon/user128pixels.png" alt="User Icon">
+            <div id="overlay">
+                <a href="perfil.html" id="overlay-text">Editar Perfil</a>
+            </div>
+        </div>
+        <a href="perfil.html"><i class="fas fa-cog"></i> Configurações</a>
+        <a href="cardapio.html"><i class="fas fa-utensils"></i> Cardápios</a>
+        <a href="lembretes.html"><i class="fas fa-bell"></i> Lembretes</a>
+        <a href="informacoes.html"><i class="fas fa-info-circle"></i> Informações</a>
+        <a href="../index.html" class="logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Deslogar</a>
+        <p class="sidenav-footer"> HealthToday </p>
+        <p class="sidenav-version"> v.0.0.2 </p>
+    </div>
+
+    <div id = "main-content">
+        <div class="feedback-container">
+            <h2>Deixe seu Feedback</h2>
+            <form id="feedback-form">
+                <label for="feedback-content">Conteúdo:</label><br>
+                <textarea id="feedback-content" name="feedback-content" rows="5" cols="50"></textarea><br>
+                <label for="feedback-stars">Estrelas:</label><br>
+                <div class="rating">
+                    <span class="star" data-value="5">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="1">&#9733;</span>
+                </div>
+                <br>
+                <input type="submit" value="Enviar Feedback">
+            </form>
+        </div>
+    </div>
+
+    <div id="feedback-list">
+
+    </div>
+
+    <script src="js/jsInformacoes.js"></script>
+</body>
+</html>

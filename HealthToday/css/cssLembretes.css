@@ -1,0 +1,322 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #87CEFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    /*zoom: 80%;*/
+}
+
+.welcome-message {
+    position: absolute;
+    top: 90px;
+    left: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #87CEFA;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
+}
+
+.logo-icon {
+    height: 29px;
+    margin-top: 3px;
+}
+
+.user-icon {
+    height: 16px;
+    margin-right: 20px;
+}
+
+.sidenav {
+    height: 0;
+    width: 210px;
+    position: fixed;
+    z-index: 1;
+    top: 40px;
+    right: 7px;
+    background-color: #2C3E50;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: 0.5s;
+    padding-top: 0px;
+    border-radius: 5px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-height: 470px;
+   /*max-height: 67vh;*/
+}
+
+.sidenav::-webkit-scrollbar {
+    display: none;
+}
+
+.sidenav a {
+    position: relative;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 11px;
+    color: #bdc3c7;
+    /*#FFFFFF*/
+    display: block;
+    transition: 0.3s;
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+
+.sidenav .logout {
+    padding-bottom: 20px;
+}
+
+.sidenav a::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    right: 36px;
+    bottom: 0;
+}
+
+.sidenav a:hover {
+    color: #3498db;
+    /*#f1f1f1*/
+    padding-left: 40px;
+    transition: 0.3s;
+}
+
+.sidenav-footer {
+    position: relative;
+    text-align: center;
+    color: grey;
+    font-size: 10px;
+    padding-top: 10px;
+    bottom: 0;
+    margin-right: 40px;
+    margin-left: 40px;
+    border-top: 1px solid grey;
+}
+
+.sidenav-version {
+    position: relative;
+    text-align: center;
+    color: grey;
+    font-size: 10px;
+    margin-top: 2px;
+    bottom: 0;
+}
+
+
+.user-icon {
+    cursor: pointer;
+    margin-right: 3px;
+    height: 29px;
+    width: 29px;
+    border-radius: 50%;
+}
+
+.down-arrow {
+    font-size: 8px;
+    cursor: pointer;
+    color: white;
+    margin-right: 30px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+#menu-trigger {
+    display: flex;
+    align-items: center;
+}
+
+#user-icon-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 50px auto 20px auto;
+}
+
+#user-icon-menu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+#overlay-text {
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    top: 73%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+#overlay-text:hover {
+    padding-left: 32px;
+}
+
+#user-icon-wrapper:hover #overlay {
+    opacity: 1;
+}
+
+#user-icon-wrapper:hover #overlay-text {
+    opacity: 1;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+#overlay:focus,
+#overlay:active {
+    border: none;
+}
+
+.reminder {
+    padding: 1em;
+    margin: 1em 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+#reminders-section {
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px;
+    /*zoom: 90%;*/
+}
+
+#reminders-section h2 {
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+#reminder-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#reminder-form label {
+    display: block;
+    margin-bottom: 5px;
+    margin: 10px;
+}
+
+#reminder-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    width: 200px;
+}
+
+#reminder-form input[type="date"] {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    width: 200px;
+}
+
+#reminder-form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#reminder-form button[type="submit"]:hover {
+    background-color: #0069d9;
+}
+
+#reminders-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#reminders-list li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#reminders-list li button {
+    background-color: #ff0000;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#reminders-list li button:hover {
+    background-color: #ff00005f;
+}
+
+#reminders-list li button:nth-child(2) {
+    background-color: #088e10;
+}
+
+#reminders-list li button:nth-child(2):hover {
+    background-color: #06bc0c;
+}
+
+.delete-btn {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.delete-btn:hover{
+    background-color: #ff00005f;
+}
+
+#expired-reminders-list li {
+    margin: 10px;;
+}

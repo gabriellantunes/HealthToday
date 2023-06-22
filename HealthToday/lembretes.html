@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HealthToday | Lembretes </title>
+    <link rel="icon" href="icon/iconHealthToday.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/cssLembretes.css">
+</head>
+
+<body>
+    <nav class="menu">
+        <a href="home.html">
+            <img class="logo-icon" src="icon/logo.png" alt="Logo">
+        </a>
+        <div id="menu-trigger">
+            <img class="user-icon" src="icon/user.png" alt="User Icon">
+            <span class="down-arrow">&#x25BC;</span>
+        </div>
+    </nav>
+
+    <div class="welcome-message" id="welcome-message"></div>
+
+    <div id="mySidenav" class="sidenav">
+        <div id="user-icon-wrapper">
+            <img id="user-icon-menu" src="icon/user128pixels.png" alt="User Icon">
+            <div id="overlay">
+                <a href="perfil.html" id="overlay-text"> Editar Perfil </a>
+            </div>
+        </div>
+        <a href="perfil.html"><i class="fas fa-cog"></i> Configurações</a>
+        <a href="cardapio.html"><i class="fas fa-utensils"></i> Cardápios</a>
+        <a href="lembretes.html"><i class="fas fa-bell"></i> Lembretes</a>
+        <a href="informacoes.html"><i class="fas fa-info-circle"></i> Informações</a>
+        <a href="../index.html" class="logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Deslogar</a>
+        <p class="sidenav-footer"> HealthToday </p>
+        <p class="sidenav-version"> v.0.0.2 </p>
+    </div>
+
+    <section id="reminders-section">
+        <h2> Meus Lembretes </h2>
+        <form id="reminder-form" onsubmit="addReminder(event)">
+            <label for="reminder-text">Texto do Lembrete:</label>
+            <input type="text" id="reminder-text" required>
+
+            <label for="reminder-date">Data do Lembrete:</label>
+            <input type="date" id="reminder-date" required>
+
+            <button type="submit">Adicionar Lembrete</button>
+            <button type="submit">Atualizar Lembrete</button>
+        </form>
+
+        <ul id="reminders-list">
+            <!-- A lista de lembretes será inserida aqui pelo JavaScript -->
+        </ul>
+
+        <h2>Lembretes vencidos</h2>
+        <ul id="expired-reminders-list">
+            <!-- A lista de lembretes vencidos será inserida aqui pelo JavaScript -->
+        </ul>
+        
+    </section>
+
+    <div class="reminder-container" id="reminder-container"></div>
+
+    <script src="js/jsLembretes.js"></script>
+</body>
+
+</html>
