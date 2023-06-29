@@ -248,14 +248,10 @@ a:active {
     border-bottom: none;
 }
 
-
-
-/*----------------------------------------------------------------*/
-
 .image-panel {
     display: flex;
     justify-content: center;
-    margin-top: -280px; /* Ajuste este valor para mover as imagens e o texto para cima ou para baixo */
+    margin-top: -280px;
     margin-bottom: 20px;
 }
 
@@ -263,17 +259,17 @@ a:active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 10px; /* Espaço entre as imagens */
+    margin: 0 10px;
 }
 
 .panel-icon {
-    width: 100px; /* Largura da imagem */
-    height: auto; /* Altura automática para manter a proporção da imagem */
+    width: 100px;
+    height: auto;
 }
 
 .image-container p {
-    margin-top: 10px; /* Espaço acima do texto */
-    font-size: 18px; /* Tamanho do texto */
+    margin-top: 10px;
+    font-size: 18px;
     color: white;
     cursor: pointer;
     transition: text-shadow 0.3s ease;
@@ -284,11 +280,11 @@ a:active {
 }
 
 .image-container.cardapio {
-    margin-right: 50px;  /* Aumente este valor para aumentar o espaçamento */
+    margin-right: 50px;
 }
 
 .image-container.medkit {
-    margin-left: 90px;  /* Aumente este valor para aumentar o espaçamento */
+    margin-left: 90px;
 }
 
 .panel-icon {
