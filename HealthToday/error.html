@@ -55,28 +55,28 @@
     <button onclick="location.href='../index.html'">Venha fazer parte da comunidade!!</button>
     <canvas id="emoji" width="150" height="150"></canvas>
     <canvas id="canvas"></canvas>
-    <!-- Your JavaScript code -->
+
     <script>
         var emojiCanvas = document.getElementById("emoji");
         var ctxEmoji = emojiCanvas.getContext("2d");
 
         ctxEmoji.beginPath();
-        ctxEmoji.arc(75, 75, 63, 0, Math.PI * 2, true); // Cabeça
+        ctxEmoji.arc(75, 75, 63, 0, Math.PI * 2, true);
         ctxEmoji.fillStyle = "#5C6BC0";
         ctxEmoji.fill();
 
         ctxEmoji.beginPath();
-        ctxEmoji.arc(60, 45, 5, 0, Math.PI * 2, true);  // Olho esquerdo
+        ctxEmoji.arc(60, 45, 5, 0, Math.PI * 2, true);
         ctxEmoji.fillStyle = "white";
         ctxEmoji.fill();
 
         ctxEmoji.beginPath();
-        ctxEmoji.arc(90, 45, 5, 0, Math.PI * 2, true);  // Olho direito
+        ctxEmoji.arc(90, 45, 5, 0, Math.PI * 2, true);
         ctxEmoji.fillStyle = "white";
         ctxEmoji.fill();
 
         ctxEmoji.beginPath();
-        ctxEmoji.arc(75, 100, 35, Math.PI, Math.PI * 2, false);  // Boca (relógio)
+        ctxEmoji.arc(75, 100, 35, Math.PI, Math.PI * 2, false);
         ctxEmoji.strokeStyle = "white";
         ctxEmoji.stroke();
 
