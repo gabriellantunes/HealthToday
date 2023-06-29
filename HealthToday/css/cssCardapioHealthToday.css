@@ -203,9 +203,8 @@ a:active {
     border: none;
 }
 
-/*------------------------------------------------------------------------------------*/
 .centered-div {
-    position: relative; /* Adiciona a posição relativa */
+    position: relative; 
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -232,9 +231,9 @@ a:active {
     margin-top: 240px;
 }*/
 #datepicker {
-    border-radius: 10px; /* Bordas arredondadas */
+    border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-    color: #444; /* Cor do texto */
+    color: #444; 
 }
 
 #datepicker .ui-state-default {
@@ -271,8 +270,8 @@ a:active {
     border: 1px solid white;
 }
 
-#datepicker .ui-state-default:hover { /* Efeitos de hover nas datas */
-    background-color: #6ac2df; /* Muda a cor de fundo */
+#datepicker .ui-state-default:hover { 
+    background-color: #6ac2df;
     color: white;
     border-radius: 50%;
 }
@@ -346,13 +345,13 @@ textarea:focus {
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    background-color: #008CBA; /* Adiciona uma cor de fundo azul */
-    color: white; /* Adiciona a cor de texto branco */
+    background-color: #008CBA;
+    color: white;
     cursor: pointer;
 }
 
 #save-menu-btn:hover {
-    background-color: #007B9A; /* Adiciona um tom de azul mais escuro quando o botão é passado o mouse */
+    background-color: #007B9A;
 }
 
 .ui-datepicker-today a.ui-state-highlight {
