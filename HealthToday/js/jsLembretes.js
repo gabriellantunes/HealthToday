@@ -1,5 +1,5 @@
-let reminderBeingEdited = null; // Nova variável para rastrear o lembrete em edição
-let reminders = []; // Variável global para armazenar os lembretes
+let reminderBeingEdited = null;
+let reminders = [];
 
 window.onload = function () {
     let currentUser = localStorage.getItem('currentUser');
@@ -14,7 +14,6 @@ window.onload = function () {
     if (user) {
         document.getElementById('welcome-message').textContent = `Olá, ${user.name}!`;
 
-        // Definir a imagem do usuário
         let userPic = localStorage.getItem(currentUser + 'profilePic');
         if (userPic) {
             document.querySelector('.user-icon').src = userPic;
@@ -80,7 +79,7 @@ function showReminders() {
         editButton.textContent = "Editar";
         var reminderDate = new Date(reminders[i].date);
         var currentDate = new Date();
-        currentDate.setHours(0, 0, 0, 0); // Ignorar a hora, apenas comparar as datas
+        currentDate.setHours(0, 0, 0, 0);
         if (reminderDate < currentDate) {
             editButton.disabled = true;
         }
@@ -108,7 +107,7 @@ function loadReminders() {
     reminders = JSON.parse(localStorage.getItem(currentUser + "-reminders")) || [];
     
     var currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0); // Ignorar a hora, apenas comparar as datas
+    currentDate.setHours(0, 0, 0, 0);
     
     var expiredReminders = [];
 
@@ -116,18 +115,18 @@ function loadReminders() {
         var reminderDate = new Date(reminders[i].date);
         if (reminderDate < currentDate) {
             expiredReminders.push(reminders[i]);
-            reminders.splice(i, 1);  // Remova o lembrete da lista principal
-            i--; // Ajuste o índice após a remoção do elemento
+            reminders.splice(i, 1);
+            i--;
         }
     }
     
     localStorage.setItem(currentUser + "-expired-reminders", JSON.stringify(expiredReminders));
-    return reminders; // Retorne a variável global em vez do local
+    return reminders;
 }
 
 function startEditing(index) {
-    reminderBeingEdited = index; // Armazenar o índice do lembrete em edição
-    var reminder = reminders[index]; // Referencie a variável global
+    reminderBeingEdited = index;
+    var reminder = reminders[index];
 
     document.getElementById("reminder-text").value = reminder.text;
     document.getElementById("reminder-date").value = reminder.date;
@@ -173,7 +172,7 @@ function addReminder() {
         alert("Lembrete Editado com Sucesso !!");
         location.reload();
     
-        reminderBeingEdited = null; // Resetar o lembrete em edição
+        reminderBeingEdited = null;
     } else {
         var newReminder = { text: text, date: date };
     
@@ -185,7 +184,7 @@ function addReminder() {
     
     localStorage.setItem(currentUser + "-reminders", JSON.stringify(reminders));
     
-    reminders = loadReminders(); // Recarregar os lembretes após atualizar
+    reminders = loadReminders();
     showReminders();
 
     document.getElementById("reminder-form").reset();
