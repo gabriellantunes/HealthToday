@@ -11,7 +11,6 @@ window.onload = function () {
     if (user) {
         document.getElementById('welcome-message').textContent = `Olá, ${user.name}!`;
 
-        // Definir a imagem do usuário
         let userPic = localStorage.getItem(currentUser + 'profilePic');
         if (userPic) {
             document.querySelector('.user-icon').src = userPic;
