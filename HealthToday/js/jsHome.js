@@ -68,7 +68,7 @@ function showUnexpiredReminders(reminders) {
     remindersList.innerHTML = "";
 
     var currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0); // Ignorar a hora, apenas comparar as datas
+    currentDate.setHours(0, 0, 0, 0);
 
     if (reminders.length === 0) {
         var li = document.createElement("li");
@@ -77,10 +77,10 @@ function showUnexpiredReminders(reminders) {
         var link = document.createElement("a");
         link.href = "lembretes.html";
         link.textContent = "utilize nosso recurso ";
-        link.className = "reminder-link";  // Adicione a classe aqui
+        link.className = "reminder-link";
         
         var icon = document.createElement("i");
-        icon.className = "fas fa-external-link-alt reminder-icon"; // Alteramos a classe do ícone aqui
+        icon.className = "fas fa-external-link-alt reminder-icon";
         link.appendChild(icon);
         
         li.appendChild(link);
