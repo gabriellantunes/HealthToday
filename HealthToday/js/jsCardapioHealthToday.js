@@ -66,27 +66,6 @@ $(function() {
     }).datepicker("show");
 });
 
-
-
-/*
-function loadMealPlan(date) {
-    let currentUser = localStorage.getItem('currentUser');
-    let mealPlans = JSON.parse(localStorage.getItem(currentUser + '-meal-plans')) || {};
-
-    let mealPlan = mealPlans[date];
-    if (mealPlan) {
-        document.getElementById('cafe-da-manha-content').value = mealPlan["Café da Manhã"] || '';
-        document.getElementById('almoco-content').value = mealPlan["Almoço"] || '';
-        document.getElementById('cafe-da-tarde-content').value = mealPlan["Café da Tarde"] || '';
-        document.getElementById('janta-content').value = mealPlan["Janta"] || '';
-    } else {
-        document.getElementById('cafe-da-manha-content').value = '';
-        document.getElementById('almoco-content').value = '';
-        document.getElementById('cafe-da-tarde-content').value = '';
-        document.getElementById('janta-content').value = '';
-    }
-}
-*/
 function loadMealPlan(date) {
     let mealPlans = JSON.parse(localStorage.getItem('meals')) || {};
 
@@ -97,14 +76,9 @@ function loadMealPlan(date) {
         document.getElementById('cafe-da-tarde-content').value = mealPlan["cafe-da-tarde"] || '';
         document.getElementById('janta-content').value = mealPlan["janta"] || '';
     } else {
-        // Se não houver plano de refeições para a data selecionada, você pode escolher preencher com um valor padrão ou deixar em branco
+    
     }
 }
-
-
-
-
-
 
 const tabs = document.querySelectorAll('.tab-button');
 const contents = document.querySelectorAll('.tab-content');
@@ -114,12 +88,12 @@ tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => {
         if (contents[index].style.display === 'block') { 
             contents[index].style.display = 'none';
-            arrows[index].innerHTML = '&#x2B9F;'; // Se o conteúdo já estiver visível, esconda-o e mude a seta para apontar para baixo
+            arrows[index].innerHTML = '&#x2B9F;';
         } else {
             contents.forEach(content => content.style.display = 'none');
-            arrows.forEach(arrow => arrow.innerHTML = '&#x2B9F;'); // Mude todas as setas para apontar para baixo
+            arrows.forEach(arrow => arrow.innerHTML = '&#x2B9F;');
             contents[index].style.display = 'block';
-            arrows[index].innerHTML = '&#x2B9D;'; // Se o conteúdo estiver escondido, mostre-o e mude a seta para apontar para cima
+            arrows[index].innerHTML = '&#x2B9D;';
         }
     });
 });
@@ -181,11 +155,6 @@ $("#datepicker").datepicker({
         loadMealPlan(dateText);  // Carrega as refeições para a data selecionada
     }
 }).datepicker("show");
-
-
-
-
-
 
 const addPrefix = (textarea) => {
     textarea.value = "• " + textarea.value.replace(/\n/g, "\n• ");
@@ -278,7 +247,7 @@ $(document).ready(function() {
             cafeDaTarde: 'Café da tarde para o dia 01-06-2023',
             janta: 'Janta para o dia 01-06-2023'
         },
-        // ... Mais refeições ...
+        // ...
     };
     
     $("#datepicker").datepicker({
@@ -305,7 +274,6 @@ $(document).ready(function() {
     });
 });
 
-// Alocar refeições aleatórias para todos os dias do mês
 var meals = {};
 
 for (let day = 1; day <= 30; day++) {
@@ -318,26 +286,20 @@ for (let day = 1; day <= 30; day++) {
   };
 }
 
-
-// Armazena as refeições no localStorage
 localStorage.setItem('meals', JSON.stringify(meals));
 
 $( function() {
     $('#datepicker').datepicker({
         dateFormat: "dd-mm-yy",
         onSelect: function(dateText) {
-            // Convertemos a data para um objeto Date do JavaScript
             var selectedDate = $.datepicker.parseDate("dd-mm-yy", dateText);
 
-            // Checamos se a data selecionada é 1 de junho
             if (selectedDate.getDate() === 1 && selectedDate.getMonth() === 5) {
-                // Preenchemos os campos de texto com algumas refeições fictícias
                 $('#cafe-da-manha-content').text("Café, torrada, frutas");
                 $('#almoco-content').text("Frango grelhado, arroz, feijão, salada");
                 $('#cafe-da-tarde-content').text("Iogurte, frutas");
                 $('#janta-content').text("Peixe assado, purê de batata, legumes");
             } else {
-                // Se a data selecionada não é 1 de junho, limpamos os campos de texto
                 $('#cafe-da-manha-content').text("111111");
                 $('#almoco-content').text("111111");
                 $('#cafe-da-tarde-content').text("1111111");
