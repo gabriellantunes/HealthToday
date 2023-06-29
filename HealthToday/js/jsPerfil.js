@@ -15,10 +15,9 @@ window.onload = function() {
             document.querySelector('#user-icon-menu').src = userPic;
         }
 
-        // Adicionar as informações do usuário na aba de "Atualização Cadastral"
         document.getElementById('name').value = user.name;
         document.getElementById('email').value = user.email;
-        document.getElementById('password').value = user.password; // Adicionar a senha do usuário
+        document.getElementById('password').value = user.password;
 
     } else {
         window.location.href = 'login.html';
@@ -127,8 +126,8 @@ document.getElementById('toggle-password').addEventListener('click', function (e
     const passwordInput = document.getElementById('password');
     const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordInput.setAttribute('type', type);
-    this.classList.toggle('fa-eye'); // ícone de olho aberto
-    this.classList.toggle('fa-eye-slash'); // ícone de olho fechado
+    this.classList.toggle('fa-eye');
+    this.classList.toggle('fa-eye-slash');
 });
 
 document.getElementById('update-btn').addEventListener('click', function() {
@@ -146,7 +145,7 @@ document.getElementById('update-btn').addEventListener('click', function() {
         
         localStorage.setItem('users', JSON.stringify(users));
         
-        alert('Informações alteradas com sucesso'); // Adicione esta linha
+        alert('Informações alteradas com sucesso');
         window.location.reload();
     } else {
         alert('Erro ao atualizar as informações do usuário');
