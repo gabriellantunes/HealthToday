@@ -271,8 +271,8 @@ a:active {
     border-radius: 5px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 40%; /* reduza a largura para 60% da largura da janela */
-    margin: 70px auto; /* centralize horizontalmente */
+    width: 40%;
+    margin: 70px auto;
     zoom: 90%;
 
 }
@@ -380,7 +380,7 @@ a:active {
 }
 
 .button-container {
-    margin-top: 50px;  /* Ajuste conforme necessário */
+    margin-top: 50px;
 }
 
 #update-btn {
@@ -418,7 +418,6 @@ a:active {
     border-radius: 5px;
 }
 
-/* Para o Mozilla Firefox */
 body {
     scrollbar-width: thin;
     scrollbar-color: #5C6BC0 #F5F5F5;
