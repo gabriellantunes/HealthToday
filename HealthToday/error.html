@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HealthToday | Oops.. !!</title>
+    <link rel="icon" href="icon/iconHealthToday.png" type="image/png">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 99vh;
+            background-color: #2C3E50;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            color: white;
+        }
+        p {
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #5C6BC0;
+            color: #FFF;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+        #emoji {
+            z-index: 1;
+            margin-top: 20px;
+            position: relative;
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Não é possível acessar esta página. </h1>
+    <p>Você precisa estar logado para continuar.</p>
+    <button onclick="location.href='../index.html'">Venha fazer parte da comunidade!!</button>
+    <canvas id="emoji" width="150" height="150"></canvas>
+    <canvas id="canvas"></canvas>
+    <!-- Your JavaScript code -->
+    <script>
+        var emojiCanvas = document.getElementById("emoji");
+        var ctxEmoji = emojiCanvas.getContext("2d");
+
+        ctxEmoji.beginPath();
+        ctxEmoji.arc(75, 75, 63, 0, Math.PI * 2, true); // Cabeça
+        ctxEmoji.fillStyle = "#5C6BC0";
+        ctxEmoji.fill();
+
+        ctxEmoji.beginPath();
+        ctxEmoji.arc(60, 45, 5, 0, Math.PI * 2, true);  // Olho esquerdo
+        ctxEmoji.fillStyle = "white";
+        ctxEmoji.fill();
+
+        ctxEmoji.beginPath();
+        ctxEmoji.arc(90, 45, 5, 0, Math.PI * 2, true);  // Olho direito
+        ctxEmoji.fillStyle = "white";
+        ctxEmoji.fill();
+
+        ctxEmoji.beginPath();
+        ctxEmoji.arc(75, 100, 35, Math.PI, Math.PI * 2, false);  // Boca (relógio)
+        ctxEmoji.strokeStyle = "white";
+        ctxEmoji.stroke();
+
+
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        var drops = [];
+
+        function Drop() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.z = Math.random() * 20;
+            this.length = Math.random() * 20;
+            this.yspeed = Math.random() * (this.z / 10) + 1;
+
+            this.fall = function() {
+                this.y = this.y + this.yspeed;
+                if (this.y > canvas.height) {
+                    this.y = Math.random() * canvas.height;
+                    this.x = Math.random() * canvas.width;
+                }
+            };
+
+            this.show = function() {
+                var thick = map(this.z, 0, 20, 1, 3);
+                ctx.strokeStyle = '#5C6BC0';
+                ctx.lineWidth = thick;
+                ctx.beginPath();
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(this.x, this.y + this.length);
+                ctx.stroke();
+            };
+        }
+
+        function setup() {
+            for (var i = 0; i < 500; i++) {
+                drops[i] = new Drop();
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (var i = 0; i < drops.length; i++) {
+                drops[i].fall();
+                drops[i].show();
+            }
+        }
+
+        function map(num, in_min, in_max, out_min, out_max) {
+            return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+        }
+
+        setup();
+        setInterval(draw, 33);
+    </script>
+</body>
+</html>
